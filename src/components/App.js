@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {handleInitialData} from "../actions/shared";
 import {connect} from 'react-redux';
 import Dashboard from "./Dashboard";
+import LoadingBar from "react-redux-loading";
 
 class App extends Component {
     componentDidMount() {
@@ -13,12 +14,15 @@ class App extends Component {
 
         return (
             <div>
+                <LoadingBar />
                 {!loading && <Dashboard />}
             </div>
         )
     }
 }
 
-export default connect(({authedUser}) => ({
+const mapStateToProps = ({authedUser}) => ({
     loading: authedUser === null
-}))(App);
+});
+
+export default connect(mapStateToProps)(App);
