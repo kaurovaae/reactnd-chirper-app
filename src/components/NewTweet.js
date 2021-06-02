@@ -45,7 +45,7 @@ class NewTweet extends Component {
                 <h3 className="center">Compose new Tweet</h3>
                 <form className="new-tweet" onSubmit={this.handleSubmit}>
                     <textarea
-                        placeholder="WHat's happening?"
+                        placeholder="What's happening?"
                         value={text}
                         onChange={this.handleChange}
                         className="textarea"
